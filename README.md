@@ -3,4 +3,4 @@ Inspired by [this](https://github.com/bjpop/js-turtle/blob/928d61589ccadca66cca6
 
 I'll port it to Python. I no longer maintain the JS implementation
 
-You know what? I'm gonna make a programming language with this built-in feature
+You know what? I'm gonna make [a programming language with this built-in feature](https://github.com/Rudxain/ideas/tree/main/romna%20VM)
