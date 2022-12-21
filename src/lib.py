@@ -21,8 +21,9 @@ def zfor(iterations: int = 0, *callbacks):
 	while iterations > 0:
 		iterations -= 1
 		i = 0
-		for i in range(len(callbacks)):
+		while i < len(callbacks):
 			callbacks[i]()
+			i += 1
 
 		i -= 2
 		while i > 0:
@@ -50,13 +51,11 @@ def xzfor(iterations: int = 0, *callbacks):
 	while iterations > 0:
 		iterations -= 1
 		i = 0
-		for i in range(len(callbacks)):
+		while i < len(callbacks):
 			callbacks[i]()
+			i += 1
 
 		i -= 1
 		while i >= 0:
 			callbacks[i]()
 			i -= 1
-
-		if iterations < 1:
-			callbacks[0]()  # bad patch

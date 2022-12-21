@@ -14,7 +14,7 @@ def main():
 
 	print('xz')
 	xzfor(2, *cbs)
-	# logs: 0 1 2 2 1 0 0 1 2 2 1 0 (actually has an extra 0, but that's a bug)
+	# logs: 0 1 2 2 1 0 0 1 2 2 1 0
 
 if __name__ == '__main__':
 	main()
