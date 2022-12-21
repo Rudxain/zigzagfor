@@ -1,10 +1,10 @@
-from typing import Final
+from typing import Final, Callable
 
-NEG_ITER_MSG: Final = 'cannot time travel'
+_NEG_ITER_MSG: Final = 'cannot time travel'
 '''error message for negative iteration count'''
 
 
-def zfor(iterations: int = 0, *callbacks):
+def zfor(iterations: int = 0, *callbacks: Callable):
 	'''
 	Iterate back and forth on an array of callbacks,
 	calling each callback in a "triangular waveform" order.
@@ -14,7 +14,7 @@ def zfor(iterations: int = 0, *callbacks):
 	`iterations` Times to iterate. Reverse iters are part of regular iters, so they aren't counted
 	'''
 	if iterations < 0:
-		raise ValueError(NEG_ITER_MSG)
+		raise ValueError(_NEG_ITER_MSG)
 
 	# if a big int is passed, this would reduce memory use
 	# `for _ in range(iterations)` dupes memory
@@ -34,7 +34,7 @@ def zfor(iterations: int = 0, *callbacks):
 			callbacks[0]()  # bad patch
 
 
-def xzfor(iterations: int = 0, *callbacks):
+def xzfor(iterations: int = 0, *callbacks: Callable):
 	'''
 	Iterate back and forth on an array of callbacks,
 	calling each callback in a "hexagonal waveform" order.
@@ -44,7 +44,7 @@ def xzfor(iterations: int = 0, *callbacks):
 	`iterations` Times to iterate. Reverse iters are part of regular iters, so they aren't counted
 	'''
 	if iterations < 0:
-		raise ValueError(NEG_ITER_MSG)
+		raise ValueError(_NEG_ITER_MSG)
 
 	# if a big int is passed, this would reduce memory use
 	# `for _ in range(iterations)` dupes memory
